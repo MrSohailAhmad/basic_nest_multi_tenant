@@ -22,7 +22,7 @@ model TenantDb {
   dbUser     String
   dbPassword String
   createdAt  DateTime @default(now())
-  deleted    Boolean?
+  deleted    Boolean? @default(false)
 }
 
 model Tenant {
@@ -32,7 +32,7 @@ model Tenant {
   // tenantId String @unique
   password String
   roleId   Int
-  deleted  Boolean?
+  deleted  Boolean? @default(false)
 }
 
 model User {
@@ -42,12 +42,12 @@ model User {
   tenantId String   @unique
   password String
   roleId   Int
-  deleted  Boolean?
+  deleted  Boolean? @default(false)
 }
 
 model Roles {
   id          Int      @id @default(autoincrement())
   name        String
   description String
-  deleted     Boolean?
+  deleted     Boolean? @default(false)
 }
