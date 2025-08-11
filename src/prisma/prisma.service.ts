@@ -46,7 +46,7 @@ export class PrismaService extends PrismaClient implements OnModuleInit {
   async pushTenantDb() {
     try {
       await execAsync(
-        `npx prisma migrate dev --name init --schema=prisma/tenant-schema.prisma --skip-generate`,
+        `npx prisma migrate dev --name init --schema=prisma/tenant-schema.prisma`,
       );
 
       return { message: 'Tenant DB pushed successfully ✅' };

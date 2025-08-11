@@ -22,14 +22,12 @@ export const seedTenantRoles = async (dbName: string) => {
   try {
     // Delete existing roles
     // await prisma.tenantRoles.deleteMany();
-
     // Insert new roles
-    const createdRoles = await prisma.tenantRoles.createMany({
-      data: tenantRoles,
-    });
-    console.log('Roles seeded successfully:', createdRoles);
-
-    return createdRoles;
+    // const createdRoles = await prisma.tenantRoles.createMany({
+    //   data: tenantRoles,
+    // });
+    // console.log('Roles seeded successfully:', createdRoles);
+    // return createdRoles;
   } catch (error) {
     console.error('Error seeding roles:', error);
     throw error;

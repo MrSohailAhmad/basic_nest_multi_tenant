@@ -17,5 +17,5 @@ model TenantUser {
     tenantId String   @unique
     password String
     roleId   Int
-    deleted  Boolean?
+    deleted  Boolean? @default(false)
 }

@@ -25,8 +25,7 @@ export const registerSchema = yup.object().shape({
     .string()
     .required(AuthEnum.REQUIRED_FIELDS)
     .min(6, AuthEnum.PASSWORD_MIN_LENGTH),
-
-  role: yup
+  roleId: yup
     .number()
     .notRequired()
     .test({

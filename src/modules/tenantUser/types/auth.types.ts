@@ -6,4 +6,4 @@ import {
 export const tenantPrisma = new TenantClient();
 
 // Define the type for the payload
-export type TenantUserInput = TenantPrisma.tenantUserCreateInput;
+export type TenantUserCreateInput = TenantPrisma.TenantUserCreateInput;

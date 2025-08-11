@@ -14,20 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model book
+ * Model TenantUser
  * 
  */
-export type book = $Result.DefaultSelection<Prisma.$bookPayload>
-/**
- * Model tenantUser
- * 
- */
-export type tenantUser = $Result.DefaultSelection<Prisma.$tenantUserPayload>
-/**
- * Model tenantRoles
- * 
- */
-export type tenantRoles = $Result.DefaultSelection<Prisma.$tenantRolesPayload>
+export type TenantUser = $Result.DefaultSelection<Prisma.$TenantUserPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -36,8 +26,8 @@ export type tenantRoles = $Result.DefaultSelection<Prisma.$tenantRolesPayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Books
- * const books = await prisma.book.findMany()
+ * // Fetch zero or more TenantUsers
+ * const tenantUsers = await prisma.tenantUser.findMany()
  * ```
  *
  *
@@ -57,8 +47,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Books
-   * const books = await prisma.book.findMany()
+   * // Fetch zero or more TenantUsers
+   * const tenantUsers = await prisma.tenantUser.findMany()
    * ```
    *
    *
@@ -155,34 +145,14 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.book`: Exposes CRUD operations for the **book** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Books
-    * const books = await prisma.book.findMany()
-    * ```
-    */
-  get book(): Prisma.bookDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.tenantUser`: Exposes CRUD operations for the **tenantUser** model.
+   * `prisma.tenantUser`: Exposes CRUD operations for the **TenantUser** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more TenantUsers
     * const tenantUsers = await prisma.tenantUser.findMany()
     * ```
     */
-  get tenantUser(): Prisma.tenantUserDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.tenantRoles`: Exposes CRUD operations for the **tenantRoles** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more TenantRoles
-    * const tenantRoles = await prisma.tenantRoles.findMany()
-    * ```
-    */
-  get tenantRoles(): Prisma.tenantRolesDelegate<ExtArgs, ClientOptions>;
+  get tenantUser(): Prisma.TenantUserDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -623,9 +593,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    book: 'book',
-    tenantUser: 'tenantUser',
-    tenantRoles: 'tenantRoles'
+    TenantUser: 'TenantUser'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -644,205 +612,73 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "book" | "tenantUser" | "tenantRoles"
+      modelProps: "tenantUser"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      book: {
-        payload: Prisma.$bookPayload<ExtArgs>
-        fields: Prisma.bookFieldRefs
+      TenantUser: {
+        payload: Prisma.$TenantUserPayload<ExtArgs>
+        fields: Prisma.TenantUserFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.bookFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$bookPayload> | null
+            args: Prisma.TenantUserFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TenantUserPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.bookFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$bookPayload>
+            args: Prisma.TenantUserFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TenantUserPayload>
           }
           findFirst: {
-            args: Prisma.bookFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$bookPayload> | null
+            args: Prisma.TenantUserFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TenantUserPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.bookFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$bookPayload>
+            args: Prisma.TenantUserFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TenantUserPayload>
           }
           findMany: {
-            args: Prisma.bookFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$bookPayload>[]
+            args: Prisma.TenantUserFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TenantUserPayload>[]
           }
           create: {
-            args: Prisma.bookCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$bookPayload>
+            args: Prisma.TenantUserCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TenantUserPayload>
           }
           createMany: {
-            args: Prisma.bookCreateManyArgs<ExtArgs>
+            args: Prisma.TenantUserCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.bookDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$bookPayload>
+            args: Prisma.TenantUserDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TenantUserPayload>
           }
           update: {
-            args: Prisma.bookUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$bookPayload>
+            args: Prisma.TenantUserUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TenantUserPayload>
           }
           deleteMany: {
-            args: Prisma.bookDeleteManyArgs<ExtArgs>
+            args: Prisma.TenantUserDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.bookUpdateManyArgs<ExtArgs>
+            args: Prisma.TenantUserUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.bookUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$bookPayload>
-          }
-          aggregate: {
-            args: Prisma.BookAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateBook>
-          }
-          groupBy: {
-            args: Prisma.bookGroupByArgs<ExtArgs>
-            result: $Utils.Optional<BookGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.bookCountArgs<ExtArgs>
-            result: $Utils.Optional<BookCountAggregateOutputType> | number
-          }
-        }
-      }
-      tenantUser: {
-        payload: Prisma.$tenantUserPayload<ExtArgs>
-        fields: Prisma.tenantUserFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.tenantUserFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantUserPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.tenantUserFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantUserPayload>
-          }
-          findFirst: {
-            args: Prisma.tenantUserFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantUserPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.tenantUserFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantUserPayload>
-          }
-          findMany: {
-            args: Prisma.tenantUserFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantUserPayload>[]
-          }
-          create: {
-            args: Prisma.tenantUserCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantUserPayload>
-          }
-          createMany: {
-            args: Prisma.tenantUserCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          delete: {
-            args: Prisma.tenantUserDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantUserPayload>
-          }
-          update: {
-            args: Prisma.tenantUserUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantUserPayload>
-          }
-          deleteMany: {
-            args: Prisma.tenantUserDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.tenantUserUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.tenantUserUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantUserPayload>
+            args: Prisma.TenantUserUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TenantUserPayload>
           }
           aggregate: {
             args: Prisma.TenantUserAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateTenantUser>
           }
           groupBy: {
-            args: Prisma.tenantUserGroupByArgs<ExtArgs>
+            args: Prisma.TenantUserGroupByArgs<ExtArgs>
             result: $Utils.Optional<TenantUserGroupByOutputType>[]
           }
           count: {
-            args: Prisma.tenantUserCountArgs<ExtArgs>
+            args: Prisma.TenantUserCountArgs<ExtArgs>
             result: $Utils.Optional<TenantUserCountAggregateOutputType> | number
-          }
-        }
-      }
-      tenantRoles: {
-        payload: Prisma.$tenantRolesPayload<ExtArgs>
-        fields: Prisma.tenantRolesFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.tenantRolesFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantRolesPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.tenantRolesFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantRolesPayload>
-          }
-          findFirst: {
-            args: Prisma.tenantRolesFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantRolesPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.tenantRolesFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantRolesPayload>
-          }
-          findMany: {
-            args: Prisma.tenantRolesFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantRolesPayload>[]
-          }
-          create: {
-            args: Prisma.tenantRolesCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantRolesPayload>
-          }
-          createMany: {
-            args: Prisma.tenantRolesCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          delete: {
-            args: Prisma.tenantRolesDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantRolesPayload>
-          }
-          update: {
-            args: Prisma.tenantRolesUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantRolesPayload>
-          }
-          deleteMany: {
-            args: Prisma.tenantRolesDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.tenantRolesUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.tenantRolesUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$tenantRolesPayload>
-          }
-          aggregate: {
-            args: Prisma.TenantRolesAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateTenantRoles>
-          }
-          groupBy: {
-            args: Prisma.tenantRolesGroupByArgs<ExtArgs>
-            result: $Utils.Optional<TenantRolesGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.tenantRolesCountArgs<ExtArgs>
-            result: $Utils.Optional<TenantRolesCountAggregateOutputType> | number
           }
         }
       }
@@ -938,9 +774,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    book?: bookOmit
-    tenantUser?: tenantUserOmit
-    tenantRoles?: tenantRolesOmit
+    tenantUser?: TenantUserOmit
   }
 
   /* Types for Logging */
@@ -1041,912 +875,7 @@ export namespace Prisma {
    */
 
   /**
-   * Model book
-   */
-
-  export type AggregateBook = {
-    _count: BookCountAggregateOutputType | null
-    _avg: BookAvgAggregateOutputType | null
-    _sum: BookSumAggregateOutputType | null
-    _min: BookMinAggregateOutputType | null
-    _max: BookMaxAggregateOutputType | null
-  }
-
-  export type BookAvgAggregateOutputType = {
-    id: number | null
-  }
-
-  export type BookSumAggregateOutputType = {
-    id: number | null
-  }
-
-  export type BookMinAggregateOutputType = {
-    id: number | null
-    title: string | null
-    author: string | null
-    createdAt: Date | null
-  }
-
-  export type BookMaxAggregateOutputType = {
-    id: number | null
-    title: string | null
-    author: string | null
-    createdAt: Date | null
-  }
-
-  export type BookCountAggregateOutputType = {
-    id: number
-    title: number
-    author: number
-    createdAt: number
-    _all: number
-  }
-
-
-  export type BookAvgAggregateInputType = {
-    id?: true
-  }
-
-  export type BookSumAggregateInputType = {
-    id?: true
-  }
-
-  export type BookMinAggregateInputType = {
-    id?: true
-    title?: true
-    author?: true
-    createdAt?: true
-  }
-
-  export type BookMaxAggregateInputType = {
-    id?: true
-    title?: true
-    author?: true
-    createdAt?: true
-  }
-
-  export type BookCountAggregateInputType = {
-    id?: true
-    title?: true
-    author?: true
-    createdAt?: true
-    _all?: true
-  }
-
-  export type BookAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which book to aggregate.
-     */
-    where?: bookWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of books to fetch.
-     */
-    orderBy?: bookOrderByWithRelationInput | bookOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: bookWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` books from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` books.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned books
-    **/
-    _count?: true | BookCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: BookAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: BookSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: BookMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: BookMaxAggregateInputType
-  }
-
-  export type GetBookAggregateType<T extends BookAggregateArgs> = {
-        [P in keyof T & keyof AggregateBook]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateBook[P]>
-      : GetScalarType<T[P], AggregateBook[P]>
-  }
-
-
-
-
-  export type bookGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: bookWhereInput
-    orderBy?: bookOrderByWithAggregationInput | bookOrderByWithAggregationInput[]
-    by: BookScalarFieldEnum[] | BookScalarFieldEnum
-    having?: bookScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: BookCountAggregateInputType | true
-    _avg?: BookAvgAggregateInputType
-    _sum?: BookSumAggregateInputType
-    _min?: BookMinAggregateInputType
-    _max?: BookMaxAggregateInputType
-  }
-
-  export type BookGroupByOutputType = {
-    id: number
-    title: string
-    author: string
-    createdAt: Date
-    _count: BookCountAggregateOutputType | null
-    _avg: BookAvgAggregateOutputType | null
-    _sum: BookSumAggregateOutputType | null
-    _min: BookMinAggregateOutputType | null
-    _max: BookMaxAggregateOutputType | null
-  }
-
-  type GetBookGroupByPayload<T extends bookGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<BookGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof BookGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], BookGroupByOutputType[P]>
-            : GetScalarType<T[P], BookGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type bookSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    title?: boolean
-    author?: boolean
-    createdAt?: boolean
-  }, ExtArgs["result"]["book"]>
-
-
-
-  export type bookSelectScalar = {
-    id?: boolean
-    title?: boolean
-    author?: boolean
-    createdAt?: boolean
-  }
-
-  export type bookOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "author" | "createdAt", ExtArgs["result"]["book"]>
-
-  export type $bookPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "book"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      title: string
-      author: string
-      createdAt: Date
-    }, ExtArgs["result"]["book"]>
-    composites: {}
-  }
-
-  type bookGetPayload<S extends boolean | null | undefined | bookDefaultArgs> = $Result.GetResult<Prisma.$bookPayload, S>
-
-  type bookCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<bookFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: BookCountAggregateInputType | true
-    }
-
-  export interface bookDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['book'], meta: { name: 'book' } }
-    /**
-     * Find zero or one Book that matches the filter.
-     * @param {bookFindUniqueArgs} args - Arguments to find a Book
-     * @example
-     * // Get one Book
-     * const book = await prisma.book.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends bookFindUniqueArgs>(args: SelectSubset<T, bookFindUniqueArgs<ExtArgs>>): Prisma__bookClient<$Result.GetResult<Prisma.$bookPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Book that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {bookFindUniqueOrThrowArgs} args - Arguments to find a Book
-     * @example
-     * // Get one Book
-     * const book = await prisma.book.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends bookFindUniqueOrThrowArgs>(args: SelectSubset<T, bookFindUniqueOrThrowArgs<ExtArgs>>): Prisma__bookClient<$Result.GetResult<Prisma.$bookPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Book that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {bookFindFirstArgs} args - Arguments to find a Book
-     * @example
-     * // Get one Book
-     * const book = await prisma.book.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends bookFindFirstArgs>(args?: SelectSubset<T, bookFindFirstArgs<ExtArgs>>): Prisma__bookClient<$Result.GetResult<Prisma.$bookPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Book that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {bookFindFirstOrThrowArgs} args - Arguments to find a Book
-     * @example
-     * // Get one Book
-     * const book = await prisma.book.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends bookFindFirstOrThrowArgs>(args?: SelectSubset<T, bookFindFirstOrThrowArgs<ExtArgs>>): Prisma__bookClient<$Result.GetResult<Prisma.$bookPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Books that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {bookFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Books
-     * const books = await prisma.book.findMany()
-     * 
-     * // Get first 10 Books
-     * const books = await prisma.book.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const bookWithIdOnly = await prisma.book.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends bookFindManyArgs>(args?: SelectSubset<T, bookFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bookPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Book.
-     * @param {bookCreateArgs} args - Arguments to create a Book.
-     * @example
-     * // Create one Book
-     * const Book = await prisma.book.create({
-     *   data: {
-     *     // ... data to create a Book
-     *   }
-     * })
-     * 
-     */
-    create<T extends bookCreateArgs>(args: SelectSubset<T, bookCreateArgs<ExtArgs>>): Prisma__bookClient<$Result.GetResult<Prisma.$bookPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Books.
-     * @param {bookCreateManyArgs} args - Arguments to create many Books.
-     * @example
-     * // Create many Books
-     * const book = await prisma.book.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends bookCreateManyArgs>(args?: SelectSubset<T, bookCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Book.
-     * @param {bookDeleteArgs} args - Arguments to delete one Book.
-     * @example
-     * // Delete one Book
-     * const Book = await prisma.book.delete({
-     *   where: {
-     *     // ... filter to delete one Book
-     *   }
-     * })
-     * 
-     */
-    delete<T extends bookDeleteArgs>(args: SelectSubset<T, bookDeleteArgs<ExtArgs>>): Prisma__bookClient<$Result.GetResult<Prisma.$bookPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Book.
-     * @param {bookUpdateArgs} args - Arguments to update one Book.
-     * @example
-     * // Update one Book
-     * const book = await prisma.book.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends bookUpdateArgs>(args: SelectSubset<T, bookUpdateArgs<ExtArgs>>): Prisma__bookClient<$Result.GetResult<Prisma.$bookPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Books.
-     * @param {bookDeleteManyArgs} args - Arguments to filter Books to delete.
-     * @example
-     * // Delete a few Books
-     * const { count } = await prisma.book.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends bookDeleteManyArgs>(args?: SelectSubset<T, bookDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Books.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {bookUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Books
-     * const book = await prisma.book.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends bookUpdateManyArgs>(args: SelectSubset<T, bookUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Book.
-     * @param {bookUpsertArgs} args - Arguments to update or create a Book.
-     * @example
-     * // Update or create a Book
-     * const book = await prisma.book.upsert({
-     *   create: {
-     *     // ... data to create a Book
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Book we want to update
-     *   }
-     * })
-     */
-    upsert<T extends bookUpsertArgs>(args: SelectSubset<T, bookUpsertArgs<ExtArgs>>): Prisma__bookClient<$Result.GetResult<Prisma.$bookPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Books.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {bookCountArgs} args - Arguments to filter Books to count.
-     * @example
-     * // Count the number of Books
-     * const count = await prisma.book.count({
-     *   where: {
-     *     // ... the filter for the Books we want to count
-     *   }
-     * })
-    **/
-    count<T extends bookCountArgs>(
-      args?: Subset<T, bookCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], BookCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Book.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {BookAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends BookAggregateArgs>(args: Subset<T, BookAggregateArgs>): Prisma.PrismaPromise<GetBookAggregateType<T>>
-
-    /**
-     * Group by Book.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {bookGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends bookGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: bookGroupByArgs['orderBy'] }
-        : { orderBy?: bookGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, bookGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBookGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the book model
-   */
-  readonly fields: bookFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for book.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__bookClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the book model
-   */
-  interface bookFieldRefs {
-    readonly id: FieldRef<"book", 'Int'>
-    readonly title: FieldRef<"book", 'String'>
-    readonly author: FieldRef<"book", 'String'>
-    readonly createdAt: FieldRef<"book", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * book findUnique
-   */
-  export type bookFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-    /**
-     * Filter, which book to fetch.
-     */
-    where: bookWhereUniqueInput
-  }
-
-  /**
-   * book findUniqueOrThrow
-   */
-  export type bookFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-    /**
-     * Filter, which book to fetch.
-     */
-    where: bookWhereUniqueInput
-  }
-
-  /**
-   * book findFirst
-   */
-  export type bookFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-    /**
-     * Filter, which book to fetch.
-     */
-    where?: bookWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of books to fetch.
-     */
-    orderBy?: bookOrderByWithRelationInput | bookOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for books.
-     */
-    cursor?: bookWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` books from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` books.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of books.
-     */
-    distinct?: BookScalarFieldEnum | BookScalarFieldEnum[]
-  }
-
-  /**
-   * book findFirstOrThrow
-   */
-  export type bookFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-    /**
-     * Filter, which book to fetch.
-     */
-    where?: bookWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of books to fetch.
-     */
-    orderBy?: bookOrderByWithRelationInput | bookOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for books.
-     */
-    cursor?: bookWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` books from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` books.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of books.
-     */
-    distinct?: BookScalarFieldEnum | BookScalarFieldEnum[]
-  }
-
-  /**
-   * book findMany
-   */
-  export type bookFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-    /**
-     * Filter, which books to fetch.
-     */
-    where?: bookWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of books to fetch.
-     */
-    orderBy?: bookOrderByWithRelationInput | bookOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing books.
-     */
-    cursor?: bookWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` books from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` books.
-     */
-    skip?: number
-    distinct?: BookScalarFieldEnum | BookScalarFieldEnum[]
-  }
-
-  /**
-   * book create
-   */
-  export type bookCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-    /**
-     * The data needed to create a book.
-     */
-    data: XOR<bookCreateInput, bookUncheckedCreateInput>
-  }
-
-  /**
-   * book createMany
-   */
-  export type bookCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many books.
-     */
-    data: bookCreateManyInput | bookCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * book update
-   */
-  export type bookUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-    /**
-     * The data needed to update a book.
-     */
-    data: XOR<bookUpdateInput, bookUncheckedUpdateInput>
-    /**
-     * Choose, which book to update.
-     */
-    where: bookWhereUniqueInput
-  }
-
-  /**
-   * book updateMany
-   */
-  export type bookUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update books.
-     */
-    data: XOR<bookUpdateManyMutationInput, bookUncheckedUpdateManyInput>
-    /**
-     * Filter which books to update
-     */
-    where?: bookWhereInput
-    /**
-     * Limit how many books to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * book upsert
-   */
-  export type bookUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-    /**
-     * The filter to search for the book to update in case it exists.
-     */
-    where: bookWhereUniqueInput
-    /**
-     * In case the book found by the `where` argument doesn't exist, create a new book with this data.
-     */
-    create: XOR<bookCreateInput, bookUncheckedCreateInput>
-    /**
-     * In case the book was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<bookUpdateInput, bookUncheckedUpdateInput>
-  }
-
-  /**
-   * book delete
-   */
-  export type bookDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-    /**
-     * Filter which book to delete.
-     */
-    where: bookWhereUniqueInput
-  }
-
-  /**
-   * book deleteMany
-   */
-  export type bookDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which books to delete
-     */
-    where?: bookWhereInput
-    /**
-     * Limit how many books to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * book without action
-   */
-  export type bookDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the book
-     */
-    select?: bookSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the book
-     */
-    omit?: bookOmit<ExtArgs> | null
-  }
-
-
-  /**
-   * Model tenantUser
+   * Model TenantUser
    */
 
   export type AggregateTenantUser = {
@@ -1959,10 +888,12 @@ export namespace Prisma {
 
   export type TenantUserAvgAggregateOutputType = {
     id: number | null
+    roleId: number | null
   }
 
   export type TenantUserSumAggregateOutputType = {
     id: number | null
+    roleId: number | null
   }
 
   export type TenantUserMinAggregateOutputType = {
@@ -1971,6 +902,8 @@ export namespace Prisma {
     email: string | null
     tenantId: string | null
     password: string | null
+    roleId: number | null
+    deleted: boolean | null
   }
 
   export type TenantUserMaxAggregateOutputType = {
@@ -1979,6 +912,8 @@ export namespace Prisma {
     email: string | null
     tenantId: string | null
     password: string | null
+    roleId: number | null
+    deleted: boolean | null
   }
 
   export type TenantUserCountAggregateOutputType = {
@@ -1987,16 +922,20 @@ export namespace Prisma {
     email: number
     tenantId: number
     password: number
+    roleId: number
+    deleted: number
     _all: number
   }
 
 
   export type TenantUserAvgAggregateInputType = {
     id?: true
+    roleId?: true
   }
 
   export type TenantUserSumAggregateInputType = {
     id?: true
+    roleId?: true
   }
 
   export type TenantUserMinAggregateInputType = {
@@ -2005,6 +944,8 @@ export namespace Prisma {
     email?: true
     tenantId?: true
     password?: true
+    roleId?: true
+    deleted?: true
   }
 
   export type TenantUserMaxAggregateInputType = {
@@ -2013,6 +954,8 @@ export namespace Prisma {
     email?: true
     tenantId?: true
     password?: true
+    roleId?: true
+    deleted?: true
   }
 
   export type TenantUserCountAggregateInputType = {
@@ -2021,42 +964,44 @@ export namespace Prisma {
     email?: true
     tenantId?: true
     password?: true
+    roleId?: true
+    deleted?: true
     _all?: true
   }
 
   export type TenantUserAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which tenantUser to aggregate.
+     * Filter which TenantUser to aggregate.
      */
-    where?: tenantUserWhereInput
+    where?: TenantUserWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of tenantUsers to fetch.
+     * Determine the order of TenantUsers to fetch.
      */
-    orderBy?: tenantUserOrderByWithRelationInput | tenantUserOrderByWithRelationInput[]
+    orderBy?: TenantUserOrderByWithRelationInput | TenantUserOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: tenantUserWhereUniqueInput
+    cursor?: TenantUserWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` tenantUsers from the position of the cursor.
+     * Take `±n` TenantUsers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` tenantUsers.
+     * Skip the first `n` TenantUsers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned tenantUsers
+     * Count returned TenantUsers
     **/
     _count?: true | TenantUserCountAggregateInputType
     /**
@@ -2096,11 +1041,11 @@ export namespace Prisma {
 
 
 
-  export type tenantUserGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: tenantUserWhereInput
-    orderBy?: tenantUserOrderByWithAggregationInput | tenantUserOrderByWithAggregationInput[]
+  export type TenantUserGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TenantUserWhereInput
+    orderBy?: TenantUserOrderByWithAggregationInput | TenantUserOrderByWithAggregationInput[]
     by: TenantUserScalarFieldEnum[] | TenantUserScalarFieldEnum
-    having?: tenantUserScalarWhereWithAggregatesInput
+    having?: TenantUserScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: TenantUserCountAggregateInputType | true
@@ -2116,6 +1061,8 @@ export namespace Prisma {
     email: string
     tenantId: string
     password: string
+    roleId: number
+    deleted: boolean | null
     _count: TenantUserCountAggregateOutputType | null
     _avg: TenantUserAvgAggregateOutputType | null
     _sum: TenantUserSumAggregateOutputType | null
@@ -2123,7 +1070,7 @@ export namespace Prisma {
     _max: TenantUserMaxAggregateOutputType | null
   }
 
-  type GetTenantUserGroupByPayload<T extends tenantUserGroupByArgs> = Prisma.PrismaPromise<
+  type GetTenantUserGroupByPayload<T extends TenantUserGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<TenantUserGroupByOutputType, T['by']> &
         {
@@ -2137,28 +1084,32 @@ export namespace Prisma {
     >
 
 
-  export type tenantUserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type TenantUserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     email?: boolean
     tenantId?: boolean
     password?: boolean
+    roleId?: boolean
+    deleted?: boolean
   }, ExtArgs["result"]["tenantUser"]>
 
 
 
-  export type tenantUserSelectScalar = {
+  export type TenantUserSelectScalar = {
     id?: boolean
     name?: boolean
     email?: boolean
     tenantId?: boolean
     password?: boolean
+    roleId?: boolean
+    deleted?: boolean
   }
 
-  export type tenantUserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "tenantId" | "password", ExtArgs["result"]["tenantUser"]>
+  export type TenantUserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "tenantId" | "password" | "roleId" | "deleted", ExtArgs["result"]["tenantUser"]>
 
-  export type $tenantUserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "tenantUser"
+  export type $TenantUserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TenantUser"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2166,22 +1117,24 @@ export namespace Prisma {
       email: string
       tenantId: string
       password: string
+      roleId: number
+      deleted: boolean | null
     }, ExtArgs["result"]["tenantUser"]>
     composites: {}
   }
 
-  type tenantUserGetPayload<S extends boolean | null | undefined | tenantUserDefaultArgs> = $Result.GetResult<Prisma.$tenantUserPayload, S>
+  type TenantUserGetPayload<S extends boolean | null | undefined | TenantUserDefaultArgs> = $Result.GetResult<Prisma.$TenantUserPayload, S>
 
-  type tenantUserCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<tenantUserFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type TenantUserCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TenantUserFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: TenantUserCountAggregateInputType | true
     }
 
-  export interface tenantUserDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tenantUser'], meta: { name: 'tenantUser' } }
+  export interface TenantUserDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TenantUser'], meta: { name: 'TenantUser' } }
     /**
      * Find zero or one TenantUser that matches the filter.
-     * @param {tenantUserFindUniqueArgs} args - Arguments to find a TenantUser
+     * @param {TenantUserFindUniqueArgs} args - Arguments to find a TenantUser
      * @example
      * // Get one TenantUser
      * const tenantUser = await prisma.tenantUser.findUnique({
@@ -2190,12 +1143,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends tenantUserFindUniqueArgs>(args: SelectSubset<T, tenantUserFindUniqueArgs<ExtArgs>>): Prisma__tenantUserClient<$Result.GetResult<Prisma.$tenantUserPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends TenantUserFindUniqueArgs>(args: SelectSubset<T, TenantUserFindUniqueArgs<ExtArgs>>): Prisma__TenantUserClient<$Result.GetResult<Prisma.$TenantUserPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one TenantUser that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {tenantUserFindUniqueOrThrowArgs} args - Arguments to find a TenantUser
+     * @param {TenantUserFindUniqueOrThrowArgs} args - Arguments to find a TenantUser
      * @example
      * // Get one TenantUser
      * const tenantUser = await prisma.tenantUser.findUniqueOrThrow({
@@ -2204,13 +1157,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends tenantUserFindUniqueOrThrowArgs>(args: SelectSubset<T, tenantUserFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tenantUserClient<$Result.GetResult<Prisma.$tenantUserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends TenantUserFindUniqueOrThrowArgs>(args: SelectSubset<T, TenantUserFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TenantUserClient<$Result.GetResult<Prisma.$TenantUserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first TenantUser that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantUserFindFirstArgs} args - Arguments to find a TenantUser
+     * @param {TenantUserFindFirstArgs} args - Arguments to find a TenantUser
      * @example
      * // Get one TenantUser
      * const tenantUser = await prisma.tenantUser.findFirst({
@@ -2219,14 +1172,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends tenantUserFindFirstArgs>(args?: SelectSubset<T, tenantUserFindFirstArgs<ExtArgs>>): Prisma__tenantUserClient<$Result.GetResult<Prisma.$tenantUserPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends TenantUserFindFirstArgs>(args?: SelectSubset<T, TenantUserFindFirstArgs<ExtArgs>>): Prisma__TenantUserClient<$Result.GetResult<Prisma.$TenantUserPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first TenantUser that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantUserFindFirstOrThrowArgs} args - Arguments to find a TenantUser
+     * @param {TenantUserFindFirstOrThrowArgs} args - Arguments to find a TenantUser
      * @example
      * // Get one TenantUser
      * const tenantUser = await prisma.tenantUser.findFirstOrThrow({
@@ -2235,13 +1188,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends tenantUserFindFirstOrThrowArgs>(args?: SelectSubset<T, tenantUserFindFirstOrThrowArgs<ExtArgs>>): Prisma__tenantUserClient<$Result.GetResult<Prisma.$tenantUserPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends TenantUserFindFirstOrThrowArgs>(args?: SelectSubset<T, TenantUserFindFirstOrThrowArgs<ExtArgs>>): Prisma__TenantUserClient<$Result.GetResult<Prisma.$TenantUserPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more TenantUsers that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantUserFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {TenantUserFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all TenantUsers
      * const tenantUsers = await prisma.tenantUser.findMany()
@@ -2253,11 +1206,11 @@ export namespace Prisma {
      * const tenantUserWithIdOnly = await prisma.tenantUser.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends tenantUserFindManyArgs>(args?: SelectSubset<T, tenantUserFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tenantUserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends TenantUserFindManyArgs>(args?: SelectSubset<T, TenantUserFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TenantUserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a TenantUser.
-     * @param {tenantUserCreateArgs} args - Arguments to create a TenantUser.
+     * @param {TenantUserCreateArgs} args - Arguments to create a TenantUser.
      * @example
      * // Create one TenantUser
      * const TenantUser = await prisma.tenantUser.create({
@@ -2267,11 +1220,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends tenantUserCreateArgs>(args: SelectSubset<T, tenantUserCreateArgs<ExtArgs>>): Prisma__tenantUserClient<$Result.GetResult<Prisma.$tenantUserPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends TenantUserCreateArgs>(args: SelectSubset<T, TenantUserCreateArgs<ExtArgs>>): Prisma__TenantUserClient<$Result.GetResult<Prisma.$TenantUserPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many TenantUsers.
-     * @param {tenantUserCreateManyArgs} args - Arguments to create many TenantUsers.
+     * @param {TenantUserCreateManyArgs} args - Arguments to create many TenantUsers.
      * @example
      * // Create many TenantUsers
      * const tenantUser = await prisma.tenantUser.createMany({
@@ -2281,11 +1234,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends tenantUserCreateManyArgs>(args?: SelectSubset<T, tenantUserCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends TenantUserCreateManyArgs>(args?: SelectSubset<T, TenantUserCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a TenantUser.
-     * @param {tenantUserDeleteArgs} args - Arguments to delete one TenantUser.
+     * @param {TenantUserDeleteArgs} args - Arguments to delete one TenantUser.
      * @example
      * // Delete one TenantUser
      * const TenantUser = await prisma.tenantUser.delete({
@@ -2295,11 +1248,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends tenantUserDeleteArgs>(args: SelectSubset<T, tenantUserDeleteArgs<ExtArgs>>): Prisma__tenantUserClient<$Result.GetResult<Prisma.$tenantUserPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends TenantUserDeleteArgs>(args: SelectSubset<T, TenantUserDeleteArgs<ExtArgs>>): Prisma__TenantUserClient<$Result.GetResult<Prisma.$TenantUserPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one TenantUser.
-     * @param {tenantUserUpdateArgs} args - Arguments to update one TenantUser.
+     * @param {TenantUserUpdateArgs} args - Arguments to update one TenantUser.
      * @example
      * // Update one TenantUser
      * const tenantUser = await prisma.tenantUser.update({
@@ -2312,11 +1265,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends tenantUserUpdateArgs>(args: SelectSubset<T, tenantUserUpdateArgs<ExtArgs>>): Prisma__tenantUserClient<$Result.GetResult<Prisma.$tenantUserPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends TenantUserUpdateArgs>(args: SelectSubset<T, TenantUserUpdateArgs<ExtArgs>>): Prisma__TenantUserClient<$Result.GetResult<Prisma.$TenantUserPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more TenantUsers.
-     * @param {tenantUserDeleteManyArgs} args - Arguments to filter TenantUsers to delete.
+     * @param {TenantUserDeleteManyArgs} args - Arguments to filter TenantUsers to delete.
      * @example
      * // Delete a few TenantUsers
      * const { count } = await prisma.tenantUser.deleteMany({
@@ -2326,13 +1279,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends tenantUserDeleteManyArgs>(args?: SelectSubset<T, tenantUserDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends TenantUserDeleteManyArgs>(args?: SelectSubset<T, TenantUserDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more TenantUsers.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantUserUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {TenantUserUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many TenantUsers
      * const tenantUser = await prisma.tenantUser.updateMany({
@@ -2345,11 +1298,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends tenantUserUpdateManyArgs>(args: SelectSubset<T, tenantUserUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends TenantUserUpdateManyArgs>(args: SelectSubset<T, TenantUserUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one TenantUser.
-     * @param {tenantUserUpsertArgs} args - Arguments to update or create a TenantUser.
+     * @param {TenantUserUpsertArgs} args - Arguments to update or create a TenantUser.
      * @example
      * // Update or create a TenantUser
      * const tenantUser = await prisma.tenantUser.upsert({
@@ -2364,14 +1317,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends tenantUserUpsertArgs>(args: SelectSubset<T, tenantUserUpsertArgs<ExtArgs>>): Prisma__tenantUserClient<$Result.GetResult<Prisma.$tenantUserPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends TenantUserUpsertArgs>(args: SelectSubset<T, TenantUserUpsertArgs<ExtArgs>>): Prisma__TenantUserClient<$Result.GetResult<Prisma.$TenantUserPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of TenantUsers.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantUserCountArgs} args - Arguments to filter TenantUsers to count.
+     * @param {TenantUserCountArgs} args - Arguments to filter TenantUsers to count.
      * @example
      * // Count the number of TenantUsers
      * const count = await prisma.tenantUser.count({
@@ -2380,8 +1333,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends tenantUserCountArgs>(
-      args?: Subset<T, tenantUserCountArgs>,
+    count<T extends TenantUserCountArgs>(
+      args?: Subset<T, TenantUserCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -2420,7 +1373,7 @@ export namespace Prisma {
      * Group by TenantUser.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantUserGroupByArgs} args - Group by arguments.
+     * @param {TenantUserGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2435,14 +1388,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends tenantUserGroupByArgs,
+      T extends TenantUserGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: tenantUserGroupByArgs['orderBy'] }
-        : { orderBy?: tenantUserGroupByArgs['orderBy'] },
+        ? { orderBy: TenantUserGroupByArgs['orderBy'] }
+        : { orderBy?: TenantUserGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2491,20 +1444,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, tenantUserGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTenantUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, TenantUserGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTenantUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the tenantUser model
+   * Fields of the TenantUser model
    */
-  readonly fields: tenantUserFieldRefs;
+  readonly fields: TenantUserFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for tenantUser.
+   * The delegate class that acts as a "Promise-like" for TenantUser.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__tenantUserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__TenantUserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2532,1226 +1485,334 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the tenantUser model
+   * Fields of the TenantUser model
    */
-  interface tenantUserFieldRefs {
-    readonly id: FieldRef<"tenantUser", 'Int'>
-    readonly name: FieldRef<"tenantUser", 'String'>
-    readonly email: FieldRef<"tenantUser", 'String'>
-    readonly tenantId: FieldRef<"tenantUser", 'String'>
-    readonly password: FieldRef<"tenantUser", 'String'>
+  interface TenantUserFieldRefs {
+    readonly id: FieldRef<"TenantUser", 'Int'>
+    readonly name: FieldRef<"TenantUser", 'String'>
+    readonly email: FieldRef<"TenantUser", 'String'>
+    readonly tenantId: FieldRef<"TenantUser", 'String'>
+    readonly password: FieldRef<"TenantUser", 'String'>
+    readonly roleId: FieldRef<"TenantUser", 'Int'>
+    readonly deleted: FieldRef<"TenantUser", 'Boolean'>
   }
     
 
   // Custom InputTypes
   /**
-   * tenantUser findUnique
+   * TenantUser findUnique
    */
-  export type tenantUserFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
     /**
-     * Filter, which tenantUser to fetch.
+     * Filter, which TenantUser to fetch.
      */
-    where: tenantUserWhereUniqueInput
+    where: TenantUserWhereUniqueInput
   }
 
   /**
-   * tenantUser findUniqueOrThrow
+   * TenantUser findUniqueOrThrow
    */
-  export type tenantUserFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
     /**
-     * Filter, which tenantUser to fetch.
+     * Filter, which TenantUser to fetch.
      */
-    where: tenantUserWhereUniqueInput
+    where: TenantUserWhereUniqueInput
   }
 
   /**
-   * tenantUser findFirst
+   * TenantUser findFirst
    */
-  export type tenantUserFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
     /**
-     * Filter, which tenantUser to fetch.
+     * Filter, which TenantUser to fetch.
      */
-    where?: tenantUserWhereInput
+    where?: TenantUserWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of tenantUsers to fetch.
+     * Determine the order of TenantUsers to fetch.
      */
-    orderBy?: tenantUserOrderByWithRelationInput | tenantUserOrderByWithRelationInput[]
+    orderBy?: TenantUserOrderByWithRelationInput | TenantUserOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for tenantUsers.
+     * Sets the position for searching for TenantUsers.
      */
-    cursor?: tenantUserWhereUniqueInput
+    cursor?: TenantUserWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` tenantUsers from the position of the cursor.
+     * Take `±n` TenantUsers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` tenantUsers.
+     * Skip the first `n` TenantUsers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of tenantUsers.
+     * Filter by unique combinations of TenantUsers.
      */
     distinct?: TenantUserScalarFieldEnum | TenantUserScalarFieldEnum[]
   }
 
   /**
-   * tenantUser findFirstOrThrow
+   * TenantUser findFirstOrThrow
    */
-  export type tenantUserFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
     /**
-     * Filter, which tenantUser to fetch.
+     * Filter, which TenantUser to fetch.
      */
-    where?: tenantUserWhereInput
+    where?: TenantUserWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of tenantUsers to fetch.
+     * Determine the order of TenantUsers to fetch.
      */
-    orderBy?: tenantUserOrderByWithRelationInput | tenantUserOrderByWithRelationInput[]
+    orderBy?: TenantUserOrderByWithRelationInput | TenantUserOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for tenantUsers.
+     * Sets the position for searching for TenantUsers.
      */
-    cursor?: tenantUserWhereUniqueInput
+    cursor?: TenantUserWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` tenantUsers from the position of the cursor.
+     * Take `±n` TenantUsers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` tenantUsers.
+     * Skip the first `n` TenantUsers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of tenantUsers.
+     * Filter by unique combinations of TenantUsers.
      */
     distinct?: TenantUserScalarFieldEnum | TenantUserScalarFieldEnum[]
   }
 
   /**
-   * tenantUser findMany
+   * TenantUser findMany
    */
-  export type tenantUserFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
     /**
-     * Filter, which tenantUsers to fetch.
+     * Filter, which TenantUsers to fetch.
      */
-    where?: tenantUserWhereInput
+    where?: TenantUserWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of tenantUsers to fetch.
+     * Determine the order of TenantUsers to fetch.
      */
-    orderBy?: tenantUserOrderByWithRelationInput | tenantUserOrderByWithRelationInput[]
+    orderBy?: TenantUserOrderByWithRelationInput | TenantUserOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing tenantUsers.
+     * Sets the position for listing TenantUsers.
      */
-    cursor?: tenantUserWhereUniqueInput
+    cursor?: TenantUserWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` tenantUsers from the position of the cursor.
+     * Take `±n` TenantUsers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` tenantUsers.
+     * Skip the first `n` TenantUsers.
      */
     skip?: number
     distinct?: TenantUserScalarFieldEnum | TenantUserScalarFieldEnum[]
   }
 
   /**
-   * tenantUser create
+   * TenantUser create
    */
-  export type tenantUserCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
     /**
-     * The data needed to create a tenantUser.
+     * The data needed to create a TenantUser.
      */
-    data: XOR<tenantUserCreateInput, tenantUserUncheckedCreateInput>
+    data: XOR<TenantUserCreateInput, TenantUserUncheckedCreateInput>
   }
 
   /**
-   * tenantUser createMany
+   * TenantUser createMany
    */
-  export type tenantUserCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many tenantUsers.
+     * The data used to create many TenantUsers.
      */
-    data: tenantUserCreateManyInput | tenantUserCreateManyInput[]
+    data: TenantUserCreateManyInput | TenantUserCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * tenantUser update
+   * TenantUser update
    */
-  export type tenantUserUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
     /**
-     * The data needed to update a tenantUser.
+     * The data needed to update a TenantUser.
      */
-    data: XOR<tenantUserUpdateInput, tenantUserUncheckedUpdateInput>
+    data: XOR<TenantUserUpdateInput, TenantUserUncheckedUpdateInput>
     /**
-     * Choose, which tenantUser to update.
+     * Choose, which TenantUser to update.
      */
-    where: tenantUserWhereUniqueInput
+    where: TenantUserWhereUniqueInput
   }
 
   /**
-   * tenantUser updateMany
+   * TenantUser updateMany
    */
-  export type tenantUserUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update tenantUsers.
+     * The data used to update TenantUsers.
      */
-    data: XOR<tenantUserUpdateManyMutationInput, tenantUserUncheckedUpdateManyInput>
+    data: XOR<TenantUserUpdateManyMutationInput, TenantUserUncheckedUpdateManyInput>
     /**
-     * Filter which tenantUsers to update
+     * Filter which TenantUsers to update
      */
-    where?: tenantUserWhereInput
+    where?: TenantUserWhereInput
     /**
-     * Limit how many tenantUsers to update.
+     * Limit how many TenantUsers to update.
      */
     limit?: number
   }
 
   /**
-   * tenantUser upsert
+   * TenantUser upsert
    */
-  export type tenantUserUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
     /**
-     * The filter to search for the tenantUser to update in case it exists.
+     * The filter to search for the TenantUser to update in case it exists.
      */
-    where: tenantUserWhereUniqueInput
+    where: TenantUserWhereUniqueInput
     /**
-     * In case the tenantUser found by the `where` argument doesn't exist, create a new tenantUser with this data.
+     * In case the TenantUser found by the `where` argument doesn't exist, create a new TenantUser with this data.
      */
-    create: XOR<tenantUserCreateInput, tenantUserUncheckedCreateInput>
+    create: XOR<TenantUserCreateInput, TenantUserUncheckedCreateInput>
     /**
-     * In case the tenantUser was found with the provided `where` argument, update it with this data.
+     * In case the TenantUser was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<tenantUserUpdateInput, tenantUserUncheckedUpdateInput>
+    update: XOR<TenantUserUpdateInput, TenantUserUncheckedUpdateInput>
   }
 
   /**
-   * tenantUser delete
+   * TenantUser delete
    */
-  export type tenantUserDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
     /**
-     * Filter which tenantUser to delete.
+     * Filter which TenantUser to delete.
      */
-    where: tenantUserWhereUniqueInput
+    where: TenantUserWhereUniqueInput
   }
 
   /**
-   * tenantUser deleteMany
+   * TenantUser deleteMany
    */
-  export type tenantUserDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which tenantUsers to delete
+     * Filter which TenantUsers to delete
      */
-    where?: tenantUserWhereInput
+    where?: TenantUserWhereInput
     /**
-     * Limit how many tenantUsers to delete.
+     * Limit how many TenantUsers to delete.
      */
     limit?: number
   }
 
   /**
-   * tenantUser without action
+   * TenantUser without action
    */
-  export type tenantUserDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TenantUserDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the tenantUser
+     * Select specific fields to fetch from the TenantUser
      */
-    select?: tenantUserSelect<ExtArgs> | null
+    select?: TenantUserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the tenantUser
+     * Omit specific fields from the TenantUser
      */
-    omit?: tenantUserOmit<ExtArgs> | null
-  }
-
-
-  /**
-   * Model tenantRoles
-   */
-
-  export type AggregateTenantRoles = {
-    _count: TenantRolesCountAggregateOutputType | null
-    _avg: TenantRolesAvgAggregateOutputType | null
-    _sum: TenantRolesSumAggregateOutputType | null
-    _min: TenantRolesMinAggregateOutputType | null
-    _max: TenantRolesMaxAggregateOutputType | null
-  }
-
-  export type TenantRolesAvgAggregateOutputType = {
-    id: number | null
-  }
-
-  export type TenantRolesSumAggregateOutputType = {
-    id: number | null
-  }
-
-  export type TenantRolesMinAggregateOutputType = {
-    id: number | null
-    name: string | null
-    description: string | null
-  }
-
-  export type TenantRolesMaxAggregateOutputType = {
-    id: number | null
-    name: string | null
-    description: string | null
-  }
-
-  export type TenantRolesCountAggregateOutputType = {
-    id: number
-    name: number
-    description: number
-    _all: number
-  }
-
-
-  export type TenantRolesAvgAggregateInputType = {
-    id?: true
-  }
-
-  export type TenantRolesSumAggregateInputType = {
-    id?: true
-  }
-
-  export type TenantRolesMinAggregateInputType = {
-    id?: true
-    name?: true
-    description?: true
-  }
-
-  export type TenantRolesMaxAggregateInputType = {
-    id?: true
-    name?: true
-    description?: true
-  }
-
-  export type TenantRolesCountAggregateInputType = {
-    id?: true
-    name?: true
-    description?: true
-    _all?: true
-  }
-
-  export type TenantRolesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which tenantRoles to aggregate.
-     */
-    where?: tenantRolesWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of tenantRoles to fetch.
-     */
-    orderBy?: tenantRolesOrderByWithRelationInput | tenantRolesOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: tenantRolesWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` tenantRoles from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` tenantRoles.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned tenantRoles
-    **/
-    _count?: true | TenantRolesCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: TenantRolesAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: TenantRolesSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: TenantRolesMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: TenantRolesMaxAggregateInputType
-  }
-
-  export type GetTenantRolesAggregateType<T extends TenantRolesAggregateArgs> = {
-        [P in keyof T & keyof AggregateTenantRoles]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateTenantRoles[P]>
-      : GetScalarType<T[P], AggregateTenantRoles[P]>
-  }
-
-
-
-
-  export type tenantRolesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: tenantRolesWhereInput
-    orderBy?: tenantRolesOrderByWithAggregationInput | tenantRolesOrderByWithAggregationInput[]
-    by: TenantRolesScalarFieldEnum[] | TenantRolesScalarFieldEnum
-    having?: tenantRolesScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: TenantRolesCountAggregateInputType | true
-    _avg?: TenantRolesAvgAggregateInputType
-    _sum?: TenantRolesSumAggregateInputType
-    _min?: TenantRolesMinAggregateInputType
-    _max?: TenantRolesMaxAggregateInputType
-  }
-
-  export type TenantRolesGroupByOutputType = {
-    id: number
-    name: string
-    description: string
-    _count: TenantRolesCountAggregateOutputType | null
-    _avg: TenantRolesAvgAggregateOutputType | null
-    _sum: TenantRolesSumAggregateOutputType | null
-    _min: TenantRolesMinAggregateOutputType | null
-    _max: TenantRolesMaxAggregateOutputType | null
-  }
-
-  type GetTenantRolesGroupByPayload<T extends tenantRolesGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<TenantRolesGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof TenantRolesGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], TenantRolesGroupByOutputType[P]>
-            : GetScalarType<T[P], TenantRolesGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type tenantRolesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    description?: boolean
-  }, ExtArgs["result"]["tenantRoles"]>
-
-
-
-  export type tenantRolesSelectScalar = {
-    id?: boolean
-    name?: boolean
-    description?: boolean
-  }
-
-  export type tenantRolesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description", ExtArgs["result"]["tenantRoles"]>
-
-  export type $tenantRolesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "tenantRoles"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      name: string
-      description: string
-    }, ExtArgs["result"]["tenantRoles"]>
-    composites: {}
-  }
-
-  type tenantRolesGetPayload<S extends boolean | null | undefined | tenantRolesDefaultArgs> = $Result.GetResult<Prisma.$tenantRolesPayload, S>
-
-  type tenantRolesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<tenantRolesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: TenantRolesCountAggregateInputType | true
-    }
-
-  export interface tenantRolesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tenantRoles'], meta: { name: 'tenantRoles' } }
-    /**
-     * Find zero or one TenantRoles that matches the filter.
-     * @param {tenantRolesFindUniqueArgs} args - Arguments to find a TenantRoles
-     * @example
-     * // Get one TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends tenantRolesFindUniqueArgs>(args: SelectSubset<T, tenantRolesFindUniqueArgs<ExtArgs>>): Prisma__tenantRolesClient<$Result.GetResult<Prisma.$tenantRolesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one TenantRoles that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {tenantRolesFindUniqueOrThrowArgs} args - Arguments to find a TenantRoles
-     * @example
-     * // Get one TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends tenantRolesFindUniqueOrThrowArgs>(args: SelectSubset<T, tenantRolesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tenantRolesClient<$Result.GetResult<Prisma.$tenantRolesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first TenantRoles that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantRolesFindFirstArgs} args - Arguments to find a TenantRoles
-     * @example
-     * // Get one TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends tenantRolesFindFirstArgs>(args?: SelectSubset<T, tenantRolesFindFirstArgs<ExtArgs>>): Prisma__tenantRolesClient<$Result.GetResult<Prisma.$tenantRolesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first TenantRoles that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantRolesFindFirstOrThrowArgs} args - Arguments to find a TenantRoles
-     * @example
-     * // Get one TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends tenantRolesFindFirstOrThrowArgs>(args?: SelectSubset<T, tenantRolesFindFirstOrThrowArgs<ExtArgs>>): Prisma__tenantRolesClient<$Result.GetResult<Prisma.$tenantRolesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more TenantRoles that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantRolesFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.findMany()
-     * 
-     * // Get first 10 TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const tenantRolesWithIdOnly = await prisma.tenantRoles.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends tenantRolesFindManyArgs>(args?: SelectSubset<T, tenantRolesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tenantRolesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a TenantRoles.
-     * @param {tenantRolesCreateArgs} args - Arguments to create a TenantRoles.
-     * @example
-     * // Create one TenantRoles
-     * const TenantRoles = await prisma.tenantRoles.create({
-     *   data: {
-     *     // ... data to create a TenantRoles
-     *   }
-     * })
-     * 
-     */
-    create<T extends tenantRolesCreateArgs>(args: SelectSubset<T, tenantRolesCreateArgs<ExtArgs>>): Prisma__tenantRolesClient<$Result.GetResult<Prisma.$tenantRolesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many TenantRoles.
-     * @param {tenantRolesCreateManyArgs} args - Arguments to create many TenantRoles.
-     * @example
-     * // Create many TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends tenantRolesCreateManyArgs>(args?: SelectSubset<T, tenantRolesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a TenantRoles.
-     * @param {tenantRolesDeleteArgs} args - Arguments to delete one TenantRoles.
-     * @example
-     * // Delete one TenantRoles
-     * const TenantRoles = await prisma.tenantRoles.delete({
-     *   where: {
-     *     // ... filter to delete one TenantRoles
-     *   }
-     * })
-     * 
-     */
-    delete<T extends tenantRolesDeleteArgs>(args: SelectSubset<T, tenantRolesDeleteArgs<ExtArgs>>): Prisma__tenantRolesClient<$Result.GetResult<Prisma.$tenantRolesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one TenantRoles.
-     * @param {tenantRolesUpdateArgs} args - Arguments to update one TenantRoles.
-     * @example
-     * // Update one TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends tenantRolesUpdateArgs>(args: SelectSubset<T, tenantRolesUpdateArgs<ExtArgs>>): Prisma__tenantRolesClient<$Result.GetResult<Prisma.$tenantRolesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more TenantRoles.
-     * @param {tenantRolesDeleteManyArgs} args - Arguments to filter TenantRoles to delete.
-     * @example
-     * // Delete a few TenantRoles
-     * const { count } = await prisma.tenantRoles.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends tenantRolesDeleteManyArgs>(args?: SelectSubset<T, tenantRolesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more TenantRoles.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantRolesUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends tenantRolesUpdateManyArgs>(args: SelectSubset<T, tenantRolesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one TenantRoles.
-     * @param {tenantRolesUpsertArgs} args - Arguments to update or create a TenantRoles.
-     * @example
-     * // Update or create a TenantRoles
-     * const tenantRoles = await prisma.tenantRoles.upsert({
-     *   create: {
-     *     // ... data to create a TenantRoles
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the TenantRoles we want to update
-     *   }
-     * })
-     */
-    upsert<T extends tenantRolesUpsertArgs>(args: SelectSubset<T, tenantRolesUpsertArgs<ExtArgs>>): Prisma__tenantRolesClient<$Result.GetResult<Prisma.$tenantRolesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of TenantRoles.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantRolesCountArgs} args - Arguments to filter TenantRoles to count.
-     * @example
-     * // Count the number of TenantRoles
-     * const count = await prisma.tenantRoles.count({
-     *   where: {
-     *     // ... the filter for the TenantRoles we want to count
-     *   }
-     * })
-    **/
-    count<T extends tenantRolesCountArgs>(
-      args?: Subset<T, tenantRolesCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], TenantRolesCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a TenantRoles.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {TenantRolesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends TenantRolesAggregateArgs>(args: Subset<T, TenantRolesAggregateArgs>): Prisma.PrismaPromise<GetTenantRolesAggregateType<T>>
-
-    /**
-     * Group by TenantRoles.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {tenantRolesGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends tenantRolesGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: tenantRolesGroupByArgs['orderBy'] }
-        : { orderBy?: tenantRolesGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, tenantRolesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTenantRolesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the tenantRoles model
-   */
-  readonly fields: tenantRolesFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for tenantRoles.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__tenantRolesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the tenantRoles model
-   */
-  interface tenantRolesFieldRefs {
-    readonly id: FieldRef<"tenantRoles", 'Int'>
-    readonly name: FieldRef<"tenantRoles", 'String'>
-    readonly description: FieldRef<"tenantRoles", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * tenantRoles findUnique
-   */
-  export type tenantRolesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
-    /**
-     * Filter, which tenantRoles to fetch.
-     */
-    where: tenantRolesWhereUniqueInput
-  }
-
-  /**
-   * tenantRoles findUniqueOrThrow
-   */
-  export type tenantRolesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
-    /**
-     * Filter, which tenantRoles to fetch.
-     */
-    where: tenantRolesWhereUniqueInput
-  }
-
-  /**
-   * tenantRoles findFirst
-   */
-  export type tenantRolesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
-    /**
-     * Filter, which tenantRoles to fetch.
-     */
-    where?: tenantRolesWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of tenantRoles to fetch.
-     */
-    orderBy?: tenantRolesOrderByWithRelationInput | tenantRolesOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for tenantRoles.
-     */
-    cursor?: tenantRolesWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` tenantRoles from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` tenantRoles.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of tenantRoles.
-     */
-    distinct?: TenantRolesScalarFieldEnum | TenantRolesScalarFieldEnum[]
-  }
-
-  /**
-   * tenantRoles findFirstOrThrow
-   */
-  export type tenantRolesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
-    /**
-     * Filter, which tenantRoles to fetch.
-     */
-    where?: tenantRolesWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of tenantRoles to fetch.
-     */
-    orderBy?: tenantRolesOrderByWithRelationInput | tenantRolesOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for tenantRoles.
-     */
-    cursor?: tenantRolesWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` tenantRoles from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` tenantRoles.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of tenantRoles.
-     */
-    distinct?: TenantRolesScalarFieldEnum | TenantRolesScalarFieldEnum[]
-  }
-
-  /**
-   * tenantRoles findMany
-   */
-  export type tenantRolesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
-    /**
-     * Filter, which tenantRoles to fetch.
-     */
-    where?: tenantRolesWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of tenantRoles to fetch.
-     */
-    orderBy?: tenantRolesOrderByWithRelationInput | tenantRolesOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing tenantRoles.
-     */
-    cursor?: tenantRolesWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` tenantRoles from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` tenantRoles.
-     */
-    skip?: number
-    distinct?: TenantRolesScalarFieldEnum | TenantRolesScalarFieldEnum[]
-  }
-
-  /**
-   * tenantRoles create
-   */
-  export type tenantRolesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
-    /**
-     * The data needed to create a tenantRoles.
-     */
-    data: XOR<tenantRolesCreateInput, tenantRolesUncheckedCreateInput>
-  }
-
-  /**
-   * tenantRoles createMany
-   */
-  export type tenantRolesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many tenantRoles.
-     */
-    data: tenantRolesCreateManyInput | tenantRolesCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * tenantRoles update
-   */
-  export type tenantRolesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
-    /**
-     * The data needed to update a tenantRoles.
-     */
-    data: XOR<tenantRolesUpdateInput, tenantRolesUncheckedUpdateInput>
-    /**
-     * Choose, which tenantRoles to update.
-     */
-    where: tenantRolesWhereUniqueInput
-  }
-
-  /**
-   * tenantRoles updateMany
-   */
-  export type tenantRolesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update tenantRoles.
-     */
-    data: XOR<tenantRolesUpdateManyMutationInput, tenantRolesUncheckedUpdateManyInput>
-    /**
-     * Filter which tenantRoles to update
-     */
-    where?: tenantRolesWhereInput
-    /**
-     * Limit how many tenantRoles to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * tenantRoles upsert
-   */
-  export type tenantRolesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
-    /**
-     * The filter to search for the tenantRoles to update in case it exists.
-     */
-    where: tenantRolesWhereUniqueInput
-    /**
-     * In case the tenantRoles found by the `where` argument doesn't exist, create a new tenantRoles with this data.
-     */
-    create: XOR<tenantRolesCreateInput, tenantRolesUncheckedCreateInput>
-    /**
-     * In case the tenantRoles was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<tenantRolesUpdateInput, tenantRolesUncheckedUpdateInput>
-  }
-
-  /**
-   * tenantRoles delete
-   */
-  export type tenantRolesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
-    /**
-     * Filter which tenantRoles to delete.
-     */
-    where: tenantRolesWhereUniqueInput
-  }
-
-  /**
-   * tenantRoles deleteMany
-   */
-  export type tenantRolesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which tenantRoles to delete
-     */
-    where?: tenantRolesWhereInput
-    /**
-     * Limit how many tenantRoles to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * tenantRoles without action
-   */
-  export type tenantRolesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the tenantRoles
-     */
-    select?: tenantRolesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the tenantRoles
-     */
-    omit?: tenantRolesOmit<ExtArgs> | null
+    omit?: TenantUserOmit<ExtArgs> | null
   }
 
 
@@ -3769,34 +1830,17 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const BookScalarFieldEnum: {
-    id: 'id',
-    title: 'title',
-    author: 'author',
-    createdAt: 'createdAt'
-  };
-
-  export type BookScalarFieldEnum = (typeof BookScalarFieldEnum)[keyof typeof BookScalarFieldEnum]
-
-
   export const TenantUserScalarFieldEnum: {
     id: 'id',
     name: 'name',
     email: 'email',
     tenantId: 'tenantId',
-    password: 'password'
+    password: 'password',
+    roleId: 'roleId',
+    deleted: 'deleted'
   };
 
   export type TenantUserScalarFieldEnum = (typeof TenantUserScalarFieldEnum)[keyof typeof TenantUserScalarFieldEnum]
-
-
-  export const TenantRolesScalarFieldEnum: {
-    id: 'id',
-    name: 'name',
-    description: 'description'
-  };
-
-  export type TenantRolesScalarFieldEnum = (typeof TenantRolesScalarFieldEnum)[keyof typeof TenantRolesScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3807,30 +1851,22 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-  export const bookOrderByRelevanceFieldEnum: {
-    title: 'title',
-    author: 'author'
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
   };
 
-  export type bookOrderByRelevanceFieldEnum = (typeof bookOrderByRelevanceFieldEnum)[keyof typeof bookOrderByRelevanceFieldEnum]
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
-  export const tenantUserOrderByRelevanceFieldEnum: {
+  export const TenantUserOrderByRelevanceFieldEnum: {
     name: 'name',
     email: 'email',
     tenantId: 'tenantId',
     password: 'password'
   };
 
-  export type tenantUserOrderByRelevanceFieldEnum = (typeof tenantUserOrderByRelevanceFieldEnum)[keyof typeof tenantUserOrderByRelevanceFieldEnum]
-
-
-  export const tenantRolesOrderByRelevanceFieldEnum: {
-    name: 'name',
-    description: 'description'
-  };
-
-  export type tenantRolesOrderByRelevanceFieldEnum = (typeof tenantRolesOrderByRelevanceFieldEnum)[keyof typeof tenantRolesOrderByRelevanceFieldEnum]
+  export type TenantUserOrderByRelevanceFieldEnum = (typeof TenantUserOrderByRelevanceFieldEnum)[keyof typeof TenantUserOrderByRelevanceFieldEnum]
 
 
   /**
@@ -3853,9 +1889,9 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'DateTime'
+   * Reference to a field of type 'Boolean'
    */
-  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -3869,292 +1905,136 @@ export namespace Prisma {
    */
 
 
-  export type bookWhereInput = {
-    AND?: bookWhereInput | bookWhereInput[]
-    OR?: bookWhereInput[]
-    NOT?: bookWhereInput | bookWhereInput[]
-    id?: IntFilter<"book"> | number
-    title?: StringFilter<"book"> | string
-    author?: StringFilter<"book"> | string
-    createdAt?: DateTimeFilter<"book"> | Date | string
+  export type TenantUserWhereInput = {
+    AND?: TenantUserWhereInput | TenantUserWhereInput[]
+    OR?: TenantUserWhereInput[]
+    NOT?: TenantUserWhereInput | TenantUserWhereInput[]
+    id?: IntFilter<"TenantUser"> | number
+    name?: StringFilter<"TenantUser"> | string
+    email?: StringFilter<"TenantUser"> | string
+    tenantId?: StringFilter<"TenantUser"> | string
+    password?: StringFilter<"TenantUser"> | string
+    roleId?: IntFilter<"TenantUser"> | number
+    deleted?: BoolNullableFilter<"TenantUser"> | boolean | null
   }
 
-  export type bookOrderByWithRelationInput = {
-    id?: SortOrder
-    title?: SortOrder
-    author?: SortOrder
-    createdAt?: SortOrder
-    _relevance?: bookOrderByRelevanceInput
-  }
-
-  export type bookWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: bookWhereInput | bookWhereInput[]
-    OR?: bookWhereInput[]
-    NOT?: bookWhereInput | bookWhereInput[]
-    title?: StringFilter<"book"> | string
-    author?: StringFilter<"book"> | string
-    createdAt?: DateTimeFilter<"book"> | Date | string
-  }, "id">
-
-  export type bookOrderByWithAggregationInput = {
-    id?: SortOrder
-    title?: SortOrder
-    author?: SortOrder
-    createdAt?: SortOrder
-    _count?: bookCountOrderByAggregateInput
-    _avg?: bookAvgOrderByAggregateInput
-    _max?: bookMaxOrderByAggregateInput
-    _min?: bookMinOrderByAggregateInput
-    _sum?: bookSumOrderByAggregateInput
-  }
-
-  export type bookScalarWhereWithAggregatesInput = {
-    AND?: bookScalarWhereWithAggregatesInput | bookScalarWhereWithAggregatesInput[]
-    OR?: bookScalarWhereWithAggregatesInput[]
-    NOT?: bookScalarWhereWithAggregatesInput | bookScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"book"> | number
-    title?: StringWithAggregatesFilter<"book"> | string
-    author?: StringWithAggregatesFilter<"book"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"book"> | Date | string
-  }
-
-  export type tenantUserWhereInput = {
-    AND?: tenantUserWhereInput | tenantUserWhereInput[]
-    OR?: tenantUserWhereInput[]
-    NOT?: tenantUserWhereInput | tenantUserWhereInput[]
-    id?: IntFilter<"tenantUser"> | number
-    name?: StringFilter<"tenantUser"> | string
-    email?: StringFilter<"tenantUser"> | string
-    tenantId?: StringFilter<"tenantUser"> | string
-    password?: StringFilter<"tenantUser"> | string
-  }
-
-  export type tenantUserOrderByWithRelationInput = {
+  export type TenantUserOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
     tenantId?: SortOrder
     password?: SortOrder
-    _relevance?: tenantUserOrderByRelevanceInput
+    roleId?: SortOrder
+    deleted?: SortOrderInput | SortOrder
+    _relevance?: TenantUserOrderByRelevanceInput
   }
 
-  export type tenantUserWhereUniqueInput = Prisma.AtLeast<{
+  export type TenantUserWhereUniqueInput = Prisma.AtLeast<{
     id?: number
     email?: string
     tenantId?: string
-    AND?: tenantUserWhereInput | tenantUserWhereInput[]
-    OR?: tenantUserWhereInput[]
-    NOT?: tenantUserWhereInput | tenantUserWhereInput[]
-    name?: StringFilter<"tenantUser"> | string
-    password?: StringFilter<"tenantUser"> | string
+    AND?: TenantUserWhereInput | TenantUserWhereInput[]
+    OR?: TenantUserWhereInput[]
+    NOT?: TenantUserWhereInput | TenantUserWhereInput[]
+    name?: StringFilter<"TenantUser"> | string
+    password?: StringFilter<"TenantUser"> | string
+    roleId?: IntFilter<"TenantUser"> | number
+    deleted?: BoolNullableFilter<"TenantUser"> | boolean | null
   }, "id" | "email" | "tenantId">
 
-  export type tenantUserOrderByWithAggregationInput = {
+  export type TenantUserOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
     tenantId?: SortOrder
     password?: SortOrder
-    _count?: tenantUserCountOrderByAggregateInput
-    _avg?: tenantUserAvgOrderByAggregateInput
-    _max?: tenantUserMaxOrderByAggregateInput
-    _min?: tenantUserMinOrderByAggregateInput
-    _sum?: tenantUserSumOrderByAggregateInput
+    roleId?: SortOrder
+    deleted?: SortOrderInput | SortOrder
+    _count?: TenantUserCountOrderByAggregateInput
+    _avg?: TenantUserAvgOrderByAggregateInput
+    _max?: TenantUserMaxOrderByAggregateInput
+    _min?: TenantUserMinOrderByAggregateInput
+    _sum?: TenantUserSumOrderByAggregateInput
   }
 
-  export type tenantUserScalarWhereWithAggregatesInput = {
-    AND?: tenantUserScalarWhereWithAggregatesInput | tenantUserScalarWhereWithAggregatesInput[]
-    OR?: tenantUserScalarWhereWithAggregatesInput[]
-    NOT?: tenantUserScalarWhereWithAggregatesInput | tenantUserScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"tenantUser"> | number
-    name?: StringWithAggregatesFilter<"tenantUser"> | string
-    email?: StringWithAggregatesFilter<"tenantUser"> | string
-    tenantId?: StringWithAggregatesFilter<"tenantUser"> | string
-    password?: StringWithAggregatesFilter<"tenantUser"> | string
+  export type TenantUserScalarWhereWithAggregatesInput = {
+    AND?: TenantUserScalarWhereWithAggregatesInput | TenantUserScalarWhereWithAggregatesInput[]
+    OR?: TenantUserScalarWhereWithAggregatesInput[]
+    NOT?: TenantUserScalarWhereWithAggregatesInput | TenantUserScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"TenantUser"> | number
+    name?: StringWithAggregatesFilter<"TenantUser"> | string
+    email?: StringWithAggregatesFilter<"TenantUser"> | string
+    tenantId?: StringWithAggregatesFilter<"TenantUser"> | string
+    password?: StringWithAggregatesFilter<"TenantUser"> | string
+    roleId?: IntWithAggregatesFilter<"TenantUser"> | number
+    deleted?: BoolNullableWithAggregatesFilter<"TenantUser"> | boolean | null
   }
 
-  export type tenantRolesWhereInput = {
-    AND?: tenantRolesWhereInput | tenantRolesWhereInput[]
-    OR?: tenantRolesWhereInput[]
-    NOT?: tenantRolesWhereInput | tenantRolesWhereInput[]
-    id?: IntFilter<"tenantRoles"> | number
-    name?: StringFilter<"tenantRoles"> | string
-    description?: StringFilter<"tenantRoles"> | string
-  }
-
-  export type tenantRolesOrderByWithRelationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    _relevance?: tenantRolesOrderByRelevanceInput
-  }
-
-  export type tenantRolesWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: tenantRolesWhereInput | tenantRolesWhereInput[]
-    OR?: tenantRolesWhereInput[]
-    NOT?: tenantRolesWhereInput | tenantRolesWhereInput[]
-    name?: StringFilter<"tenantRoles"> | string
-    description?: StringFilter<"tenantRoles"> | string
-  }, "id">
-
-  export type tenantRolesOrderByWithAggregationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    _count?: tenantRolesCountOrderByAggregateInput
-    _avg?: tenantRolesAvgOrderByAggregateInput
-    _max?: tenantRolesMaxOrderByAggregateInput
-    _min?: tenantRolesMinOrderByAggregateInput
-    _sum?: tenantRolesSumOrderByAggregateInput
-  }
-
-  export type tenantRolesScalarWhereWithAggregatesInput = {
-    AND?: tenantRolesScalarWhereWithAggregatesInput | tenantRolesScalarWhereWithAggregatesInput[]
-    OR?: tenantRolesScalarWhereWithAggregatesInput[]
-    NOT?: tenantRolesScalarWhereWithAggregatesInput | tenantRolesScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"tenantRoles"> | number
-    name?: StringWithAggregatesFilter<"tenantRoles"> | string
-    description?: StringWithAggregatesFilter<"tenantRoles"> | string
-  }
-
-  export type bookCreateInput = {
-    title: string
-    author: string
-    createdAt?: Date | string
-  }
-
-  export type bookUncheckedCreateInput = {
-    id?: number
-    title: string
-    author: string
-    createdAt?: Date | string
-  }
-
-  export type bookUpdateInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    author?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type bookUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    author?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type bookCreateManyInput = {
-    id?: number
-    title: string
-    author: string
-    createdAt?: Date | string
-  }
-
-  export type bookUpdateManyMutationInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    author?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type bookUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    author?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type tenantUserCreateInput = {
+  export type TenantUserCreateInput = {
     name: string
     email: string
     tenantId: string
     password: string
+    roleId: number
+    deleted?: boolean | null
   }
 
-  export type tenantUserUncheckedCreateInput = {
+  export type TenantUserUncheckedCreateInput = {
     id?: number
     name: string
     email: string
     tenantId: string
     password: string
+    roleId: number
+    deleted?: boolean | null
   }
 
-  export type tenantUserUpdateInput = {
+  export type TenantUserUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     tenantId?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    roleId?: IntFieldUpdateOperationsInput | number
+    deleted?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
-  export type tenantUserUncheckedUpdateInput = {
+  export type TenantUserUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     tenantId?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    roleId?: IntFieldUpdateOperationsInput | number
+    deleted?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
-  export type tenantUserCreateManyInput = {
+  export type TenantUserCreateManyInput = {
     id?: number
     name: string
     email: string
     tenantId: string
     password: string
+    roleId: number
+    deleted?: boolean | null
   }
 
-  export type tenantUserUpdateManyMutationInput = {
+  export type TenantUserUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     tenantId?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    roleId?: IntFieldUpdateOperationsInput | number
+    deleted?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
-  export type tenantUserUncheckedUpdateManyInput = {
+  export type TenantUserUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     tenantId?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type tenantRolesCreateInput = {
-    name: string
-    description: string
-  }
-
-  export type tenantRolesUncheckedCreateInput = {
-    id?: number
-    name: string
-    description: string
-  }
-
-  export type tenantRolesUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type tenantRolesUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type tenantRolesCreateManyInput = {
-    id?: number
-    name: string
-    description: string
-  }
-
-  export type tenantRolesUpdateManyMutationInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type tenantRolesUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    roleId?: IntFieldUpdateOperationsInput | number
+    deleted?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -4183,50 +2063,60 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
   }
 
-  export type bookOrderByRelevanceInput = {
-    fields: bookOrderByRelevanceFieldEnum | bookOrderByRelevanceFieldEnum[]
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type TenantUserOrderByRelevanceInput = {
+    fields: TenantUserOrderByRelevanceFieldEnum | TenantUserOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type bookCountOrderByAggregateInput = {
+  export type TenantUserCountOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    author?: SortOrder
-    createdAt?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    tenantId?: SortOrder
+    password?: SortOrder
+    roleId?: SortOrder
+    deleted?: SortOrder
   }
 
-  export type bookAvgOrderByAggregateInput = {
+  export type TenantUserAvgOrderByAggregateInput = {
     id?: SortOrder
+    roleId?: SortOrder
   }
 
-  export type bookMaxOrderByAggregateInput = {
+  export type TenantUserMaxOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    author?: SortOrder
-    createdAt?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    tenantId?: SortOrder
+    password?: SortOrder
+    roleId?: SortOrder
+    deleted?: SortOrder
   }
 
-  export type bookMinOrderByAggregateInput = {
+  export type TenantUserMinOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    author?: SortOrder
-    createdAt?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    tenantId?: SortOrder
+    password?: SortOrder
+    roleId?: SortOrder
+    deleted?: SortOrder
   }
 
-  export type bookSumOrderByAggregateInput = {
+  export type TenantUserSumOrderByAggregateInput = {
     id?: SortOrder
+    roleId?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -4263,96 +2153,16 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
-  export type tenantUserOrderByRelevanceInput = {
-    fields: tenantUserOrderByRelevanceFieldEnum | tenantUserOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
-  export type tenantUserCountOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    tenantId?: SortOrder
-    password?: SortOrder
-  }
-
-  export type tenantUserAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type tenantUserMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    tenantId?: SortOrder
-    password?: SortOrder
-  }
-
-  export type tenantUserMinOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    tenantId?: SortOrder
-    password?: SortOrder
-  }
-
-  export type tenantUserSumOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type tenantRolesOrderByRelevanceInput = {
-    fields: tenantRolesOrderByRelevanceFieldEnum | tenantRolesOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
-  export type tenantRolesCountOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-  }
-
-  export type tenantRolesAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type tenantRolesMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-  }
-
-  export type tenantRolesMinOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-  }
-
-  export type tenantRolesSumOrderByAggregateInput = {
-    id?: SortOrder
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -4361,6 +2171,10 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -4389,15 +2203,9 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -4445,18 +2253,23 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
 

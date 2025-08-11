@@ -120,25 +120,14 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.BookScalarFieldEnum = {
-  id: 'id',
-  title: 'title',
-  author: 'author',
-  createdAt: 'createdAt'
-};
-
 exports.Prisma.TenantUserScalarFieldEnum = {
   id: 'id',
   name: 'name',
   email: 'email',
   tenantId: 'tenantId',
-  password: 'password'
-};
-
-exports.Prisma.TenantRolesScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  description: 'description'
+  password: 'password',
+  roleId: 'roleId',
+  deleted: 'deleted'
 };
 
 exports.Prisma.SortOrder = {
@@ -146,28 +135,21 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.bookOrderByRelevanceFieldEnum = {
-  title: 'title',
-  author: 'author'
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
-exports.Prisma.tenantUserOrderByRelevanceFieldEnum = {
+exports.Prisma.TenantUserOrderByRelevanceFieldEnum = {
   name: 'name',
   email: 'email',
   tenantId: 'tenantId',
   password: 'password'
 };
 
-exports.Prisma.tenantRolesOrderByRelevanceFieldEnum = {
-  name: 'name',
-  description: 'description'
-};
-
 
 exports.Prisma.ModelName = {
-  book: 'book',
-  tenantUser: 'tenantUser',
-  tenantRoles: 'tenantRoles'
+  TenantUser: 'TenantUser'
 };
 
 /**

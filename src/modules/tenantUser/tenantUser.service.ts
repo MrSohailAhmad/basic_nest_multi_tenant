@@ -1,5 +1,3 @@
-import { TenantUserInput } from './types/auth.types';
-
 // auth.service.ts
 import {
   Injectable,
@@ -14,6 +12,7 @@ import { successResponse } from 'src/common/utils/globalResponse.utils';
 import { AppError, createAccessToken } from 'src/common/utils/token.utils';
 import { LoginDto, RegisterUserDto } from './dto/auth.dto';
 import { AuthEnum } from './enum/auth.enum';
+import { TenantUserCreateInput } from './types/auth.types';
 
 @Injectable()
 export class AuthService {
@@ -78,7 +77,7 @@ export class AuthService {
     body.password = await bcrypt.hash(password, 12);
 
     const createUser = await prisma.tenantUser.create({
-      data: { ...body, tenantId } as TenantUserInput,
+      data: { ...body, tenantId } as TenantUserCreateInput,
     });
     const updateRecord = this.publicProfile(createUser);
 
