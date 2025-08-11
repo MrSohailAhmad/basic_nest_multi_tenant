@@ -27,7 +27,7 @@ export const createUserSchema = yup.object().shape({
       if (!value) return true;
       const record = await prisma.roles.findFirst({
         where: {
-          // deleted: false,
+          deleted: false,
           id: value,
         },
       });
