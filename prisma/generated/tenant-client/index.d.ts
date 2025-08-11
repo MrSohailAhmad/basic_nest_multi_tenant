@@ -1932,15 +1932,15 @@ export namespace Prisma {
   export type TenantUserWhereUniqueInput = Prisma.AtLeast<{
     id?: number
     email?: string
-    tenantId?: string
     AND?: TenantUserWhereInput | TenantUserWhereInput[]
     OR?: TenantUserWhereInput[]
     NOT?: TenantUserWhereInput | TenantUserWhereInput[]
     name?: StringFilter<"TenantUser"> | string
+    tenantId?: StringFilter<"TenantUser"> | string
     password?: StringFilter<"TenantUser"> | string
     roleId?: IntFilter<"TenantUser"> | number
     deleted?: BoolNullableFilter<"TenantUser"> | boolean | null
-  }, "id" | "email" | "tenantId">
+  }, "id" | "email">
 
   export type TenantUserOrderByWithAggregationInput = {
     id?: SortOrder
