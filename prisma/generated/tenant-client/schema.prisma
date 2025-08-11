@@ -1,0 +1,32 @@
+// tenant.schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/tenant-client" // 👈 unique output folder
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL") // 👈 dynamically change this later
+}
+
+model book {
+  id        Int      @id @default(autoincrement())
+  title     String
+  author    String
+  createdAt DateTime @default(now())
+}
+
+model tenantUser {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  tenantId String @unique
+  password String
+}
+
+model tenantRoles {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String
+}
