@@ -25,10 +25,9 @@ export const createUserSchema = yup.object().shape({
     message: AuthEnum.INVALID_ROLE,
     async test(value) {
       if (!value) return true;
-      const record = await prisma.user.findFirst({
-        // TODO here we change to roles if we needed and add delete
+      const record = await prisma.roles.findFirst({
         where: {
-          //   deleted: false,
+          // deleted: false,
           id: value,
         },
       });

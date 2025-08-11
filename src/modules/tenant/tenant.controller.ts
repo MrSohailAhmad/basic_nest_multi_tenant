@@ -30,8 +30,6 @@ import {
 
 @ApiTags('Tenant')
 @Controller('tenant')
-
-// @UseGuards(AuthGuard, RolesGuard)
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
@@ -72,6 +70,7 @@ export class UserController {
 
   @Put(':id')
   @ApiBearerAuth()
+  @Roles('Owner')
   @UseGuards(AuthGuard, RolesGuard)
   @ApiOperation({ summary: 'Update user by ID' })
   update(
@@ -83,6 +82,7 @@ export class UserController {
 
   @Delete(':id')
   @ApiBearerAuth()
+  @Roles('Owner')
   @UseGuards(AuthGuard, RolesGuard)
   @ApiOperation({ summary: 'Delete user by ID' })
   remove(@Param('id') id: string) {

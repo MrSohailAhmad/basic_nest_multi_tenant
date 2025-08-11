@@ -19,10 +19,3 @@ model TenantUser {
     roleId   Int
     deleted  Boolean?
 }
-
-model TenantRoles {
-    id          Int      @id @default(autoincrement())
-    name        String
-    description String
-    deleted     Boolean?
-}
