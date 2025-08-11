@@ -25,7 +25,7 @@ async function bootstrap() {
   app.useGlobalInterceptors(new ResponseInterceptor());
 
   //  run seeder for add roles in DB
-  // runSeeders();
+  runSeeders();
   await app.listen(PORT, () => {
     console.log(`Server Are running on http://localhost:${PORT}`);
   });
