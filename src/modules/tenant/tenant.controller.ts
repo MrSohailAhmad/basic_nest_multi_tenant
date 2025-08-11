@@ -21,6 +21,12 @@ import { RolesGuard } from 'src/common/guards/roles.guard';
 import { AuthGuard } from 'src/common/guards/auth.guard';
 import { LoginDto } from '../tenantUser/dto/auth.dto';
 import { Roles } from 'src/common/decorators/roles.decorator';
+import { YupValidationPipe } from 'src/common/pipes/yup-validation.pipe';
+import {
+  createUserSchema,
+  loginTenantSchema,
+  updateUserSchema,
+} from './validations/tenant.validation';
 
 @ApiTags('Tenant')
 @Controller('tenant')
@@ -40,14 +46,18 @@ export class UserController {
   @Post('register')
   @ApiOperation({ summary: 'Create user' })
   @ApiResponse({ status: 201, description: 'User created successfully' })
-  register(@Body() createUserDto: CreateUserDto) {
+  register(
+    @Body(new YupValidationPipe(createUserSchema)) createUserDto: CreateUserDto,
+  ) {
     return this.userService.register(createUserDto);
   }
 
   @Post('login')
   @ApiOperation({ summary: 'Login user' })
   @ApiResponse({ status: 201, description: 'User Login successfully' })
-  login(@Body() createUserDto: LoginDto) {
+  login(
+    @Body(new YupValidationPipe(loginTenantSchema)) createUserDto: LoginDto,
+  ) {
     return this.userService.login(createUserDto);
   }
 
@@ -64,7 +74,10 @@ export class UserController {
   @ApiBearerAuth()
   @UseGuards(AuthGuard, RolesGuard)
   @ApiOperation({ summary: 'Update user by ID' })
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+  update(
+    @Param('id') id: string,
+    @Body(new YupValidationPipe(updateUserSchema)) updateUserDto: UpdateUserDto,
+  ) {
     return this.userService.update(+id, updateUserDto);
   }
 

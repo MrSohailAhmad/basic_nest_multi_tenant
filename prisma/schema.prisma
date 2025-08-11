@@ -14,7 +14,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model tenantDb {
+model TenantDb {
   id         String   @id @default(uuid())
   name       String
   dbName     String
@@ -22,28 +22,32 @@ model tenantDb {
   dbUser     String
   dbPassword String
   createdAt  DateTime @default(now())
+  deleted    Boolean?
 }
 
-model tenant {
-  id       Int    @id @default(autoincrement())
+model Tenant {
+  id       Int      @id @default(autoincrement())
   name     String
-  email    String @unique
+  email    String   @unique
   // tenantId String @unique
   password String
   roleId   Int
+  deleted  Boolean?
 }
 
-model user {
-  id       Int    @id @default(autoincrement())
+model User {
+  id       Int      @id @default(autoincrement())
   name     String
-  email    String @unique
-  tenantId String @unique
+  email    String   @unique
+  tenantId String   @unique
   password String
   roleId   Int
+  deleted  Boolean?
 }
 
-model roles {
-  id          Int    @id @default(autoincrement())
+model Roles {
+  id          Int      @id @default(autoincrement())
   name        String
   description String
+  deleted     Boolean?
 }

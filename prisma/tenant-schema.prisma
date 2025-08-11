@@ -10,24 +10,19 @@ datasource db {
     url      = env("DATABASE_URL") // 👈 dynamically change this later
 }
 
-model book {
-    id        Int      @id @default(autoincrement())
-    title     String
-    author    String
-    createdAt DateTime @default(now())
-}
-
-model tenantUser {
-    id       Int    @id @default(autoincrement())
+model TenantUser {
+    id       Int      @id @default(autoincrement())
     name     String
-    email    String @unique
-    tenantId String @unique
+    email    String   @unique
+    tenantId String   @unique
     password String
     roleId   Int
+    deleted  Boolean?
 }
 
-model tenantRoles {
-    id          Int    @id @default(autoincrement())
+model TenantRoles {
+    id          Int      @id @default(autoincrement())
     name        String
     description String
+    deleted     Boolean?
 }

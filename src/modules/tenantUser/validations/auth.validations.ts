@@ -15,7 +15,7 @@ export const loginSchema = yup.object().shape({
     .min(6, AuthEnum.PASSWORD_MIN_LENGTH),
 });
 
-export const RegisterSchema = yup.object().shape({
+export const registerSchema = yup.object().shape({
   name: yup.string().required(AuthEnum.REQUIRED_FIELDS),
   email: yup
     .string()
@@ -34,10 +34,9 @@ export const RegisterSchema = yup.object().shape({
       message: AuthEnum.INVALID_ROLE,
       async test(value) {
         if (!value) return true;
-        const record = await prisma.user.findFirst({
-          // TODO here we change to roles if we needed and add delete
+        const record = await prisma.roles.findFirst({
           where: {
-            //   deleted: false,
+            deleted: false,
             id: value,
           },
         });
